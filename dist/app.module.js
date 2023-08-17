@@ -11,13 +11,15 @@ const common_1 = require("@nestjs/common");
 const boards_module_1 = require("./boards/boards.module");
 const typeorm_config_1 = require("./configs/typeorm.config");
 const dist_1 = require("@nestjs/typeorm/dist");
+const auth_module_1 = require("./auth/auth.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     common_1.Module({
         imports: [
             dist_1.TypeOrmModule.forRoot(typeorm_config_1.typeORMConfig),
-            boards_module_1.BoardsModule
+            boards_module_1.BoardsModule,
+            auth_module_1.AuthModule
         ],
     })
 ], AppModule);
